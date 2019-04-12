@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src="js/model/pelicula.js"></script>
+   <!-- <script type="text/javascript" src="js/model/gestorPelis.js"></script>-->
+    <script type="text/javascript" src="js/model/gestorLocalStorePelis.js"></script>
+    <script type="text/javascript" src="js/controller/controlPelis.js"></script>
+    <title>Document</title>
+</head>
+<body onload="inicializar()">
+        <h1>Peliculas</h1><br>
+        <section>
+            <label for="pelicula"></label>
+            Titulo: <input type="text" nombre="pelicula" id="pelicula" required />
+            <label for="director"></label>
+            Director <input type="text" name="director" id="director" required />
+            <label for="codigo"></label>
+            Codigo: <input type="text" name="codigo" id="codigo" pattern="^[A-Z]{3}-[0-9]{5}-[A-Z]{2}" required /><br>
+            <label for="genero"></label>
+            Genero: <select name="genero" id="genero" required>
+                <option>Accion</option>
+                <option>Animacion</option>
+                <option>Aventura</option>
+                <option>Belico</option>
+                <option>Comedia</option>
+                <option>Ciencia-Ficcion</option>
+                <option>Drama</option>
+                <option>Romance</option>
+                <option>Terror</option>
+                <option>Thriller</option>
+                <option>Western</option>
+            </select>
+            <label for="estreno"></label>
+            Estreno: <input type="date" name="estreno" id="estreno" required />
+            <label for="valoracion"></label>
+            Valoracion: <input type="number" name="valoracion" id="valoracion" min="0" max="10" /><br>
+            <label for="insertar"></label>
+            <button type="button" name="insertar" onclick="insertarPeliEnTabla()">Insertar</button>
+            <label for="modificar"></label>
+            <button type="button" name="modificar" onclick="modificarPeliEnTabla()">Modificar</button>
+            <label for="eliminar"></label>
+            <button type="button" name="eliminar" onclick="eliminarPeliDeTabla()">Eliminar</button>
+            <label for="limpiar"></label>
+            <button type="button" name="limpiar" onclick="limpiarFormulario()">Limpiar</button>
+        </section>
+        <section>
+            <table align="center" border="2px" id="tabla">
+                <caption>Listado de Peliculas</caption>
+                <thead id="cabTabla">
+                    <tr>
+                        <th>Codigo</th>
+                        <th>Titulo</th>
+                        <th>Director</th>
+                        <th>Genero</th>
+                        <th>Estreno</th>
+                        <th>Valoracion</th>
+                    </tr>
+                </thead>
+                <tbody id="cuerpoTabla" align="center">
+                  
+                </tbody>
+            </table>
+        </section>
+    </body>
+    
+    </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <script type="text/javascript" src="js/peliculas.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="main.css" />
+    <script type="text/javascript" src="js/peliculas.js"></script>
+    <title>Peliculas</title>
+</head>
+
+<body>
+    <h1>Peliculas</h1><br>
+    <section>
+        <label for="Pelicula"></label>
+        Titulo: <input type="text" nombre="pelicula" id="pelicula" required />
+        <label for="Director"></label>
+        Director <input type="text" name="director" id="director" required />
+        <label for="Codigo"></label>
+        Codigo: <input type="text" name="codigo" id="codigo" pattern="^[A-Z]{3}-[0-9]{5}-[A-Z]{2}" required /><br>
+        <label for="Genero"></label>
+        Genero: <select name="genero" id="genero" required>
+            <option>Accion</option>
+            <option>Animacion</option>
+            <option>Aventura</option>
+            <option>Belico</option>
+            <option>Comedia</option>
+            <option>Ciencia-Ficcion</option>
+            <option>Drama</option>
+            <option>Romance</option>
+            <option>Terror</option>
+            <option>Thriller</option>
+            <option>Western</option>
+        </select>
+        <label for="Estreno"></label>
+        Estreno: <input type="date" name="estreno" id="estreno" required />
+        <label for="Valoracion"></label>
+        Valoracion: <input type="number" name="valoracion" id="valoracion" min="0" max="10" /><br>
+        <label for="Enviar"></label>
+        <button type="button" name="insertar" onclick="insertaPeli()">Insertar</button>
+        <button type="button" name="modificar" onclick="">Modificar</button>
+        <button type="button" name="eliminar" onclick="borraPeli()">Eliminar</button>
+    </section>
+    <section>
+        <table align="center" border="2px" id="tabla">
+            <caption>Listado de Peliculas</caption>
+            <thead id="cabTabla">
+                <tr>
+                    <th>Codigo</th>
+                    <th>Titulo</th>
+                    <th>Director</th>
+                    <th>Genero</th>
+                    <th>Estreno</th>
+                    <th>Valoracion</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla" align="center">
+                <tr>
+                    <td>AAA-11111-AA</td>
+                    <td>Gladiator</td>
+                    <td>Ridley Scott</td>
+                    <td>Drama</td>
+                    <td>20/11/2000</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>AAA-11112-AA</td>
+                    <td>Pulp Fiction</td>
+                    <td>Quentin Tarantino</td>
+                    <td>Thriller</td>
+                    <td>20/12/2004</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>AAA-11113-AA</td>
+                    <td>Mowgli</td>
+                    <td>Andy Serkis</td>
+                    <td>Aventura</td>
+                    <td>17/12/2018</td>
+                    <td>6</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</body>
+
+</html>
