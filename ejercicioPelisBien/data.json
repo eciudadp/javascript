@@ -3,7 +3,7 @@
     "pelicula":"El señor de los anillos 1",
     "director":"Peter Jackson",
     "genero":"Aventura",
-    "estreno":"2000-12-20",
+    "fecha":"2000-12-20",
     "valoracion":"10"
 },
 {
@@ -11,7 +11,7 @@
     "pelicula":"El señor de los anillos 2",
     "director":"Peter Jackson",
     "genero":"Aventura",
-    "estreno":"2001-12-21",
+    "fecha":"2001-12-21",
     "valoracion":"10"
 },
 {
@@ -19,7 +19,7 @@
     "pelicula":"El señor de los anillos 3",
     "director":"Peter Jackson",
     "genero":"Aventura",
-    "estreno":"2002-12-22",
+    "fecha":"2002-12-22",
     "valoracion":"10"
 },
 {
@@ -27,7 +27,7 @@
     "pelicula":"Braveheart",
     "director":"Mel Gibson",
     "genero":"Drama",
-    "estreno":"1999-11-05",
+    "fecha":"1999-11-05",
     "valoracion":"9"
 },
 {
@@ -35,7 +35,7 @@
     "pelicula":"Reservoir Dogs",
     "director":"Quentin Tarantino",
     "genero":"Thriller",
-    "estreno":"1992-05-16",
+    "fecha":"1992-05-16",
     "valoracion":"9"
 }
 ]

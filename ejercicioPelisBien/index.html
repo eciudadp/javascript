@@ -13,12 +13,12 @@
 <body onload="inicializar()">
         <h1>Peliculas</h1><br>
         <section>
-            <label for="pelicula"></label>
-            Titulo: <input type="text" nombre="pelicula" id="pelicula" required />
+            <label for="titulo"></label>
+            Titulo: <input type="text" nombre="titulo" id="titulo" required />
             <label for="director"></label>
             Director <input type="text" name="director" id="director" required />
-            <label for="codigo"></label>
-            Codigo: <input type="text" name="codigo" id="codigo" pattern="^[A-Z]{3}-[0-9]{5}-[A-Z]{2}" required /><br>
+            <label for="codId"></label>
+            Codigo: <input type="text" name="codId" id="codId" pattern="^[a-zA-Z]{3}-[0-9]{5}-[a-zA-Z]{2}$" required /><br>
             <label for="genero"></label>
             Genero: <select name="genero" id="genero" required>
                 <option>Accion</option>
@@ -33,16 +33,16 @@
                 <option>Thriller</option>
                 <option>Western</option>
             </select>
-            <label for="estreno"></label>
-            Estreno: <input type="date" name="estreno" id="estreno" required />
+            <label for="fecha"></label>
+            fecha: <input type="date" name="fecha" id="fecha" required />
             <label for="valoracion"></label>
             Valoracion: <input type="number" name="valoracion" id="valoracion" min="0" max="10" /><br>
             <label for="insertar"></label>
-            <button type="button" name="insertar" onclick="insertarPeliEnTabla()">Insertar</button>
+            <button type="button" name="insertar" onclick="guardaUno()">Insertar</button>
             <label for="modificar"></label>
-            <button type="button" name="modificar" onclick="modificarPeliEnTabla()">Modificar</button>
+            <button type="button" name="modificar" onclick="actualizaUno()">Modificar</button>
             <label for="eliminar"></label>
-            <button type="button" name="eliminar" onclick="eliminarPeliDeTabla()">Eliminar</button>
+            <button type="button" name="eliminar" onclick="borraUno()">Eliminar</button>
             <label for="limpiar"></label>
             <button type="button" name="limpiar" onclick="limpiarFormulario()">Limpiar</button>
         </section>
@@ -55,7 +55,7 @@
                         <th>Titulo</th>
                         <th>Director</th>
                         <th>Genero</th>
-                        <th>Estreno</th>
+                        <th>fecha</th>
                         <th>Valoracion</th>
                     </tr>
                 </thead>

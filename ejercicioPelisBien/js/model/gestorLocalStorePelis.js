@@ -16,10 +16,10 @@ class gestorPelis {
     }
 
     insertaPeli(pelicula) {
-        if (typeof this.obtenerPeli(pelicula.codigo) === "undefined") {
+        if (typeof this.obtenerPeli(pelicula.codId) === "undefined") {
             var peliculas = this.getPeliculasFromLocalStorage();
-            //pelicula.estreno = pelicula.estreno.toJSON();
-            //pelicula.estreno = new Date (pelicula.estreno);
+            //pelicula.fecha = pelicula.fecha.toJSON();
+            pelicula.fecha = new Date (pelicula.fecha);
             peliculas.push(pelicula);
             this.setPeliculasToLocalStorage(peliculas);
         }
@@ -29,22 +29,22 @@ class gestorPelis {
         return this.getPeliculasFromLocalStorage();
     }
 
-    obtenerPeli(codigo) {
+    obtenerPeli(codId) {
         var listaPelis = this.getPeliculasFromLocalStorage();
         for (let i = 0; i < listaPelis.length; i++) {
             var peliActual = listaPelis[i];
-            if (peliActual.codigo == codigo){
-                peliActual.estreno = new Date(peliActual.estreno)
+            if (peliActual.codId == codId){
+                peliActual.fecha = new Date(peliActual.fecha)
                 return peliActual;
             }
         }
     }
 
-    borrarPeli(codigo) {
+    borrarPeli(codId) {
         var listaPelis = this.getPeliculasFromLocalStorage();
         for (let i = 0; i < listaPelis.length; i++) {
             var peliactual = listaPelis[i];
-            if (peliactual.codigo == codigo) {
+            if (peliactual.codId == codId) {
                 var pelicula = listaPelis.splice(i, 1);
                 this.setPeliculasToLocalStorage(listaPelis);
                 return pelicula;
@@ -56,9 +56,9 @@ class gestorPelis {
         var listaPelis = this.getPeliculasFromLocalStorage();
         for (let i = 0; i < listaPelis.length; i++) {
             var peliActual = listaPelis[i];
-            if (peliActual.codigo == pelicula.codigo) {
-                //pelicula.estreno = pelicula.estreno.toJSON();
-                //pelicula.estreno = new Date(pelicula.estreno);
+            if (peliActual.codId == pelicula.codId) {
+                //pelicula.fecha = pelicula.fecha.toJSON();
+                //pelicula.fecha = new Date(pelicula.fecha);
                 listaPelis[i] = pelicula;
                 this.setPeliculasToLocalStorage(listaPelis);
                 return true;

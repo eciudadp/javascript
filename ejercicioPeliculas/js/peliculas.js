@@ -7,7 +7,7 @@ var pelicula = {
     "director": "",
     "codigo": "",
     "genero": "",
-    "estreno": "",
+    "fecha": "",
     "valoracion": ""
 };
 
@@ -19,7 +19,7 @@ function creaPeli() {
     var director = document.getElementById("director");
     var code = document.getElementById("codigo");
     var genre = document.getElementById("genero");
-    var estreno = document.getElementById("estreno");
+    var fecha = document.getElementById("fecha");
     var valora = document.getElementById("valoracion");
 
 
@@ -27,7 +27,7 @@ function creaPeli() {
     pelicula.director = director.value;
     pelicula.codigo = code.value;
     pelicula.genero = genre.value;
-    pelicula.estreno = estreno.value;
+    pelicula.fecha = fecha.value;
     pelicula.valoracion = valora.value;
 
     return pelicula;
@@ -40,7 +40,7 @@ function insertaPeli() {
     var director = document.getElementById("director");
     var code = document.getElementById("codigo");
     var genre = document.getElementById("genero");
-    var estreno = document.getElementById("estreno");
+    var fecha = document.getElementById("fecha");
     var valora = document.getElementById("valoracion");
     var tabla = document.getElementById("tabla");
 
@@ -52,8 +52,8 @@ function insertaPeli() {
     console.log(code);
     genre = genre.value;
     console.log(genre);
-    estreno = estreno.value;
-    console.log(estreno);
+    fecha = fecha.value;
+    console.log(fecha);
     valora = valora.value;
     console.log(valora);
     console.log(tabla.value);
@@ -76,7 +76,7 @@ function insertaPeli() {
     fila.appendChild(celda3);
     celda4.innerText = genre;
     fila.appendChild(celda4);
-    celda5.innerText = estreno;
+    celda5.innerText = fecha;
     fila.appendChild(celda5);
     celda6.innerText = valora;
     fila.appendChild(celda6);
@@ -103,14 +103,14 @@ function pelicula() {
     var director = document.getElementById("director");
     var code = document.getElementById("codigo");
     var genre = document.getElementById("genero");
-    var estreno = document.getElementById("estreno");
+    var fecha = document.getElementById("fecha");
     var valora = document.getElementById("valoracion");
     var tabla = document.getElementById("tabla");
     title = title.value;
     director = director.value;
     code = code.value;
     //genre =genre.value;
-    estreno = estreno.value;
+    fecha = fecha.value;
     valora = valora.value;
 }
 
