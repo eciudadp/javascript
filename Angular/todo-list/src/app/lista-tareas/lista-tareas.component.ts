@@ -13,7 +13,13 @@ export class ListaTareasComponent implements OnInit {
   constructor(private tareasService: TareasService) { }
 
   ngOnInit() {
-    this.tareas = this.tareasService.getTareas();
+    this.inicializarTareas();
+    this.tareasService.datosCambiados.subscribe(() => {
+      this.inicializarTareas();
+    });
   }
 
+  inicializarTareas() {
+    this.tareasService.getTareas().subscribe(tareas => this.tareas = tareas);
+  }
 }

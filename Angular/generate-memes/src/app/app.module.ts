@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { CmpImagenComponent } from './cmp-imagen/cmp-imagen.component';
 import { CmpFormularioComponent } from './cmp-formulario/cmp-formulario.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { CmpFormularioComponent } from './cmp-formulario/cmp-formulario.componen
     CmpFormularioComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

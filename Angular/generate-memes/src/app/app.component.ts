@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ export class AppComponent {
   title = 'generate-memes';
   meme = "";
   meme2 ="";
-  URL="https://thumbs.gfycat.com/FaroffCoarseBarnacle-poster.jpg"
+  @Input() URL="https://thumbs.gfycat.com/FaroffCoarseBarnacle-poster";
 
   introducirTextoArriba(event) {
     console.log(event);

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/modules/http';
 
 import { AppComponent } from './app.component';
 import { MiPrimerComponenteComponent } from './mi-primer-componente/mi-primer-componente.component';
@@ -28,6 +29,8 @@ import { CmpServiciosComponent } from './cmp-servicios/cmp-servicios.component';
 import { UsuarioAComponent } from './cmp-servicios/usuario-a/usuario-a.component';
 import { UsuarioBComponent } from './cmp-servicios/usuario-b/usuario-b.component';
 import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.component';
+import { CmpObservablesComponent } from './cmp-observables/cmp-observables.component';
+import { HttpClient } from 'selenium-webdriver/http';
 
 @NgModule({
   declarations: [
@@ -56,12 +59,14 @@ import { CmpFormulariosComponent } from './cmp-formularios/cmp-formularios.compo
     CmpServiciosComponent,
     UsuarioAComponent,
     UsuarioBComponent,
-    CmpFormulariosComponent
+    CmpFormulariosComponent,
+    CmpObservablesComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

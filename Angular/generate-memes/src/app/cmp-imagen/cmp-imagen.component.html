@@ -1,8 +1,8 @@
 <div class="contenedor" align="left">
-  <p class="textoMeme textoArriba">{{textoUp}}</p>
+  <p class="textoMeme textoArriba">{{textoUp | uppercase}}</p>
   <label for="imagen"></label>
   <img width="900" alt="Meme"
-    [src]= "URL">
-  <p class="textoMeme textoAbajo">{{textoDown}}</p>
+    [src]= "imgURL">
+  <p class="textoMeme textoAbajo">{{textoDown | uppercase}}</p>
 
 </div>

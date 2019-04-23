@@ -1,9 +1,15 @@
-<!--The content below is only a placeholder and can be replaced.-->
+
 <h1 id="tituloPrincipal">Pinche Meme</h1>
 
 <div id="contenedor">
-    <app-cmp-imagen id ="meme" [textoUp]="meme" [textoDown]="meme2"></app-cmp-imagen>
+    <app-cmp-imagen 
+    id ="meme"
+    
+    [textoUp]="meme" 
+    [textoDown]="meme2">
+</app-cmp-imagen>
     <app-cmp-formulario id="form" (onTextUp)="introducirTextoArriba($event)"
         (onTextDown)="introducirTextoAbajo($event)"></app-cmp-formulario>
     
 </div>
+<!-- [imgURL] = "imgURL"  -->
