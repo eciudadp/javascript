@@ -1,0 +1,12 @@
+h1#tituloPrincipal{
+    text-align: center;
+    
+}
+
+div#contenedor{
+    display: flex;
+    flex-wrap: wrap;
+    align-item: center;
+    justify-content:space-evenly;
+    /* background-color: black; */
+}

@@ -1,0 +1,39 @@
+<h1>Directivas</h1>
+<h2>Estructurales</h2>
+<button type="button" (click)="cambiarMostrar()">Mostrar: {{mostrar ? 'Si' : 'No'}}</button>
+<p *ngIf="mostrar">Se muestra si mostrar=true</p>
+<p *ngIf="mostrar; else else1">Se muestra si mostrar=true (IF 1)</p>
+<ng-template #else1>
+  <p>Se muestra si mostrar=false (ELSE1)</p>
+</ng-template>
+
+<div *ngIf="mostrar; then if2 else else1">Se muestra si mostrar=true (IF 2)</div>
+<ng-template #if2>
+  <p>Se muestra si mostrar=false (ELSE1)</p>
+</ng-template>
+<ng-template #else2>
+  <p>Se muestra si mostrar=false (ELSE1)</p>
+</ng-template>
+
+
+<ul>
+  <li *ngFor="let mascota of mascotas; let pos= index">{{pos}}:{{mascota}}</li>
+</ul>
+
+<div [ngSwitch]="getMascota">
+  <p *ngSwitchCase="'Gato'">Tengo un gato</p>
+<p *ngSwitchCase="'Perro'">Tengo un perro</p>
+<p *ngSwitchDefault>Otro</p>
+
+</div>
+
+<h2>Atributos</h2>
+<p [ngClass]="getClases()">Un texto azul subrayado</p>
+<p [ngStyle]="{color: 'yellow', backgroundColor: 'black'}">Un texto amarillo con fondo negro</p>
+<p appMarcar> texto marcado en rojo</p>
+<p appMarcar colorFondo="lightGreen"> texto marcado en verde</p>
+<p [appMarcar]="'lightGreen'"> texto marcado en verde</p>
+
+
+<input appPowermode type="text"/>
+<p></p>

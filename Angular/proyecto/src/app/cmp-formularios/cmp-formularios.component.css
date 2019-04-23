@@ -1,0 +1,10 @@
+input.ng-invalid.ng-dirty{
+    border: 2px solid red;
+}
+
+input.ng-valid{
+    border: 2px solid yellowgreen;
+}
+input.focus{
+    border: 0px solid black;
+}

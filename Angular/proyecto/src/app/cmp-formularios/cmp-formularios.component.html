@@ -1,0 +1,19 @@
+<h1>Formularios Reactivos</h1>
+<form [formGroup]="miFormulario" (ngSubmit)="enviar()">
+  <div>
+    <label for="usuario">Usuario</label>
+    <input type="text" formControlName="usuario">
+    <span *ngIf="miFormulario.controls.usuario.invalid && miFormulario.controls.usuario.dirty">Campo erroneo</span>
+  </div>
+  <div>
+    <label for="email">Email</label>
+    <input type="email" formControlName="email"> 
+    <span *ngIf="miFormulario.controls.email.invalid && miFormulario.controls.email.dirty">Campo erroneo</span>
+  </div>
+  <div>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password">
+    <span *ngIf="miFormulario.controls.password.invalid && miFormulario.controls.password.dirty">Campo erroneo</span>
+  </div>
+  <button type="submit" [disabled]="miFormulario.invalid">Enviar</button>
+</form>

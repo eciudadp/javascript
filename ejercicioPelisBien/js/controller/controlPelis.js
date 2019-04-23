@@ -15,10 +15,12 @@ function inicializar() {
         if (ajax.status == 200 && ajax.readyState == 4) {
             let datos = JSON.parse(ajax.responseText)
             console.log(datos);
-            for (let i = 0; i < datos.length; i++) {
-                gestor.insertaPeli(datos[i]);
-            }
-            mostrarTabla();
+
+            /* for (let i = 0; i < datos.length; i++) {
+                 gestor.insertaPeli(datos[i]);
+                 
+             }*/
+            mostrarTabla(datos);
         }
     }
     ajax.send();
@@ -34,14 +36,15 @@ function guardaUno() {
     ajax.onreadystatechange = function () {
 
         if (ajax.status == 200 && ajax.readyState == 4) {
-            let datos = JSON.parse(ajax.response)
+            var datos = JSON.parse(ajax.response)
             console.log(datos);
             //var peli = new pelicula();
-            gestor.insertaPeli(datos);
+            //gestor.insertaPeli(datos);
+            mostrarTabla(datos);
         }
         console.log(ajax.readyState);
-        mostrarTabla();
-    }  
+
+    }
     ajax.send(JSON.stringify(obtenerPeliFormulario()));
 }
 
@@ -49,7 +52,7 @@ function dameUno() {
     var pelicula = obtenerPeliFormulario();
 
     var ajax = new XMLHttpRequest();
-    ajax.open("GET", "http://192.168.1.63:8080/peliculas/"+pelicula.codId);
+    ajax.open("GET", "http://192.168.1.63:8080/peliculas/" + pelicula.codId);
     ajax.onreadystatechange = function () {
 
         if (ajax.status == 200 && ajax.readyState == 4) {
@@ -65,14 +68,14 @@ function dameUno() {
     ajax.send();
 }
 
-function borraUno(){
+function borraUno() {
     var pelicula = obtenerPeliFormulario();
 
     var ajax = new XMLHttpRequest();
-    ajax.open("DELETE","http://192.168.1.63:8080/peliculas/"+pelicula.codId);
-    ajax.onreadystatechange = function (){
+    ajax.open("DELETE", "http://192.168.1.63:8080/peliculas/" + pelicula.codId);
+    ajax.onreadystatechange = function () {
 
-        if(ajax.status == 200 && ajax.readyState == 4){
+        if (ajax.status == 200 && ajax.readyState == 4) {
             //datos = JSON.parse(ajax.response)
             //console.log(datos);
             gestor.borrarPeli(pelicula.codId);
@@ -81,17 +84,17 @@ function borraUno(){
         console.log(ajax.readyState);
         mostrarTabla();
     }
-    
+
     ajax.send();
 }
-function actualizaUno(){
+function actualizaUno() {
     var pelicula = obtenerPeliFormulario();
     var ajax = new XMLHttpRequest();
-    ajax.open("PUT","http://192.168.1.63:8080/peliculas/"+pelicula.codId,true);
-    ajax.setRequestHeader('Content-type','application/json; charset=utf-8')
-    ajax.onreadystatechange = function (){
+    ajax.open("PUT", "http://192.168.1.63:8080/peliculas/" + pelicula.codId, true);
+    ajax.setRequestHeader('Content-type', 'application/json; charset=utf-8')
+    ajax.onreadystatechange = function () {
 
-        if(ajax.status == 200 && ajax.readyState == 4){
+        if (ajax.status == 200 && ajax.readyState == 4) {
             datos = JSON.parse(ajax.response)
             console.log(datos);
             gestor.actualizarPeli(pelicula);
@@ -99,12 +102,13 @@ function actualizaUno(){
         console.log(ajax.readyState);
         mostrarTabla();
     }
-    
+
     ajax.send(JSON.stringify(obtenerPeliFormulario()));
 }
 //--------------------------------------------------------------------------------------------------------------------------------
-function mostrarTabla() {
-    var listaPelis = gestor.muestraPelis();
+function mostrarTabla(datos) {
+    //var listaPelis = gestor.muestraPelis();
+    var listaPelis = datos;
     var cuerpo = document.getElementById("cuerpoTabla");
     cuerpo.innerHTML = "";
     for (let i = 0; i < listaPelis.length; i++) {

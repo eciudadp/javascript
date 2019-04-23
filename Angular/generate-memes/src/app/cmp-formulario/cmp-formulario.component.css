@@ -1,0 +1,20 @@
+/* .form{
+    position: top;
+    top: 10px;
+    
+} */
+
+/* .p{
+    padding: 20px 30px 20px 10px;
+} */
+
+input{
+    display: block;
+    height: 40px;
+    width: 300px;
+    border: 1px solid lightblue;
+    margin: 20px auto;
+}
+input{
+    border: 2px solid lightgray;
+}
